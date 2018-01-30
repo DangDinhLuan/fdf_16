@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   layout "admin"
+  include SessionsHelper
 
   def correct_user
     @user = User.find_by id: params[:id]
