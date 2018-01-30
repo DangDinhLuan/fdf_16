@@ -321,6 +321,7 @@ en:
       total: "Total"
       invoice: "Invoice address"
       ship: "Shipping address"
+<<<<<<< 3a833543fdd1620f12e64827aedbaf72f623f6ef
     suggestions:
       title: "My suggestions"
       accept: "Accept"
@@ -343,3 +344,5 @@ en:
         success: "Suggestion was successfully updated"
       delete:
         success: "Suggestion was successfully deleted."
+=======
+>>>>>>> User - Profile user

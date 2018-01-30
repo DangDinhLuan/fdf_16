@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :load_order, only: [:show]
+  before_action :load_order, only: :show
 
   def index
     @slides = Slide.all
@@ -23,4 +23,8 @@ class OrdersController < ApplicationController
       redirect_to admin_orders_url
     end
   end
+<<<<<<< 3a833543fdd1620f12e64827aedbaf72f623f6ef
+=======
+
+>>>>>>> User - Profile user
 end

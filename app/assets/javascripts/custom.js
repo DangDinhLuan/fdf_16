@@ -21,7 +21,11 @@ function readURL(input,imgId) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
     reader.onload = function(e) {
+<<<<<<< 3a833543fdd1620f12e64827aedbaf72f623f6ef
       $('.'+imgId).attr('src', e.target.result);
+=======
+        $('.'+imgId).attr('src', e.target.result);
+>>>>>>> User - Profile user
     }
     reader.readAsDataURL(input.files[0]);
   }
