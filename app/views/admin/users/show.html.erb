@@ -4,7 +4,11 @@
       <h6 class="category text-gray"><%= @user.name %></h6>
       <h4 class="card-title"><%= @user.email %></h4>
       <h4 class="card-title"><%= @user.phone %></h4>
+<<<<<<< 962826c0d70e28a96a43efddb47d65d180c6ab28
       <p class="card-content"><%= t "admin.user.address" %>: <%= @user.address %></p>
+=======
+      <p class="card-content">Address: <%= @user.address %></p>
+>>>>>>> Admin - Manage Users
     </div>
   </div>
 </div>
@@ -39,14 +43,14 @@
               <td><%= order_user.status_order %></td>
               <td class="td-actions text-right">
                 <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.view"%>" class="btn btn-info btn-simple btn-xs">
-                <%= link_to [:admin, order_user] do %>
-                <i class="material-icons">remove_red_eye</i>
-                <% end %>
+                  <%= link_to [:admin, order_user] do %>
+                    <i class="material-icons">remove_red_eye</i>
+                  <% end %>
                 </button>
                 <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.edit"%>" class="btn btn-success btn-simple btn-xs">
-                <%= link_to edit_admin_order_path(order_user) do %>
-                <i class="material-icons">edit</i>
-                <% end %>
+                  <%= link_to edit_admin_order_path(order_user) do %>
+                    <i class="material-icons">edit</i>
+                  <% end %>
                 </button>
               </td>
             </tr>

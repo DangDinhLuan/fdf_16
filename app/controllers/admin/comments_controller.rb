@@ -16,15 +16,13 @@ class Admin::CommentsController < AdminController
   def destroy
     if @comment.destroy
       flash[:success] = t "admin.comment.delete.success"
-      redirect_to admin_comments_url
     else
       @messages = @comment.errors
-      redirect_to admin_comments_url
     end
+    redirect_to admin_comments_url
   end
 
   private
-
   def load_comment
     @comment = Comment.find_by id: params[:id]
     if @comment.nil?

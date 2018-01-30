@@ -1,4 +1,8 @@
 class Admin::UsersController < AdminController
+<<<<<<< 962826c0d70e28a96a43efddb47d65d180c6ab28
+=======
+
+>>>>>>> Admin - Manage Users
   before_action :load_user, only: [:show, :destroy]
   before_action :verify_admin, only: [:index, :show, :destroy]
 
@@ -7,7 +11,7 @@ class Admin::UsersController < AdminController
   end
 
   def show
-    @orders_user = Order.order(params[:id]).page(params[:page]).per Settings.page.per_page
+    @orders_user = Order.orders_user(params[:id]).page(params[:page]).per Settings.page.per_page
   end
 
   def destroy

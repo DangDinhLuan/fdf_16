@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   validates :total, presence: true
   validates :status, inclusion: {in: [true, false]}
 
-  scope :order, -> (id) { where(user_id: id).order(created_at: :desc) }
+  scope :orders_user, -> (id) { where(user_id: id).order(created_at: :desc) }
   
   def status_order
     if self.status

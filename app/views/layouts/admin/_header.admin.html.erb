@@ -17,16 +17,15 @@
                </a>
             </li>
          </ul>
-         <form class="navbar-form navbar-right" role="search">
+         <%= form_tag controller.controller_name,class: "navbar-form navbar-right", method: :get do %>
             <div class="form-group  is-empty">
-               <input type="text" class="form-control" placeholder="Search">
-               <span class="material-input"></span>
+               <%= text_field_tag "term", params[:term],class: "form-control", placeholder: "Enter title" %>
             </div>
-            <button type="submit" class="btn btn-white btn-round btn-just-icon">
-               <i class="material-icons">search</i>
-               <div class="ripple-container"></div>
-            </button>
-         </form>
+            <%= button_tag(type: "submit", class: "btn btn-white btn-round btn-just-icon") do %>
+              <i class="material-icons">search</i>
+              <div class="ripple-container"></div>
+            <% end %>
+         <% end %>
       </div>
    </div>
 </nav>
