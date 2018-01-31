@@ -4,17 +4,22 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
-  resources :users
+  delete "/logout", to: "sessions#destroy"
+  get "user/profiles", to: "users#show"
+  patch "user/change_password", to: "users#change_password"
+  resources :users, except: [:show, :destroy]
+  resources :orders, except: [:edit, :update, :destroy]
   resources :account_activations, only: [:edit]
   resources :password_resets, expect: :destroy
   resources :carts, only: [:create, :update, :destroy]
   resources :products
+  resources :suggestions
 
   namespace :admin do
     resources :categories
     resources :orders, except: [:destroy]
     resources :comments, except: [:edit, :update]
-    resources :users
+    resources :users, except: [:show]
     resources :products
     resources :slides, except: [:index, :show]
     get "slides", to: "slides#new"

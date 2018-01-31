@@ -52,4 +52,9 @@ module ApplicationHelper
     text.truncate Settings.product.description.excerp, saparator: /\s/
   end
 
+  def current_class? url_path
+    return "active" if request.path == url_path
+    ""
+  end
+
 end
