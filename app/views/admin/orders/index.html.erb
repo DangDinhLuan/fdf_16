@@ -44,6 +44,8 @@
           <% end %>
         </tbody>
       </table>
+      Download:
+      <%= link_to "export", admin_path(format: "xls") %>
       <%= paginate @orders %>
       <%= page_entries_info @orders if @orders.blank? %>
     </div>

@@ -84,4 +84,14 @@ class User < ApplicationRecord
     BCrypt::Password.new(digest).is_password? token
   end
 
+  def self.to_xls(options = {})
+    attributes = %w{name email phone address}
+    CSV.generate(options) do |csv|
+      csv << attributes
+      all.each do |user|
+        csv << attributes.map{ |attr| user.send(attr) }
+      end
+    end
+  end
+
 end

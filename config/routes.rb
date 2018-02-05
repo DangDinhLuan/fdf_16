@@ -26,13 +26,15 @@ Rails.application.routes.draw do
   post "/ratings", to: "ratings#create"
   patch "/ratings", to: "ratings#update"
 
-  get "/admin", to: "admin/products#index"
+  get "/admin", to: "admin#index"
   namespace :admin do
     resources :categories
     resources :orders, except: :destroy
     resources :comments, except: [:edit, :update]
     resources :users
-    resources :products
+    resources :products do
+      collection { post :import }
+    end
     resources :slides, except: [:index, :show]
     get "slides", to: "slides#new"
     post "slides/updates", to: "slides#update_status"

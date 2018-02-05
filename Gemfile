@@ -17,6 +17,7 @@ gem "kaminari"
 gem "carrierwave", "~> 0.10.0"
 gem "mini_magick", "~> 4.3"
 gem "roo"
+gem "to_xls-rails"
 
 group :production do
   gem "pg", "~> 0.20"
