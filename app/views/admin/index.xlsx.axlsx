@@ -1,0 +1,16 @@
+excel_package = Axlsx::Package.new
+excel_package.workbook.add_worksheet(name: "User Report") do |sheet|
+  sheet.add_row ["email","name", "phone", "address"]
+  @users.each do |user|
+    sheet.add_row [user.email, user.name, user.phone, user.address]
+  end
+end
+excel_package.workbook.add_worksheet(name: "Categories report") do |sheet|
+  sheet.add_row ["title","type"]
+  @categories.each do |categorie|
+    sheet.add_row [categorie.title, categorie.type]
+  end
+end
+path = "#{Rails.root}/public"
+file = File.open("#{path}/sample.xlsx", "w+")
+excel_package.serialize file
